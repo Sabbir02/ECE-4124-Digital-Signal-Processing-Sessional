@@ -1,0 +1,97 @@
+Unit step, unit impulse and unit ramp
+1. clc;
+2. clear all;
+3. close all;
+4.
+5. t = -10:0.001:10;
+6. u = t >= 0;
+7. d = t == 0;
+8. r = t .* (t >= 0);
+9.
+10. subplot(3,1,1);
+11. plot(t,u);
+12. xlabel('Time (s)');
+13. ylabel('Amplitude');
+14. title('Unit step');
+15. ylim([-0.1, 1.1]);
+16.17. subplot(3,1,2);
+18. plot(t,d);
+19. xlabel('Time (s)');
+20. ylabel('Amplitude');
+21. title('Unit impulse');
+22. ylim([-0.1, 1.1]);
+23.
+24. subplot(3,1,3);
+25. plot(t,r);
+26. xlabel('Time (s)');
+27. ylabel('Amplitude');
+28. title('Unit ramp');
+29. ylim([-0.5, 5.5]);
+Discrete signal -
+1. clc;
+2. clear all;
+3. close all;
+4.
+5. x=[1, 1, -3, 0, 2, -2, 6];
+6. n=[1 2 3 4 5 6 8];
+7. stem(n,x);
+8. xlabel('n');
+9. ylabel('x');
+10. xlim([0, 7]);
+11. ylim([-4, 4]);
+Two different signals, their addition and subtraction-
+1. clc;
+2. clear all;
+3. close all;
+4.
+5. t=-5:0.5:5;
+6. step1= t>=0 & t<=5;
+7. step2= t>=-2.5 & t<=2.5;
+8.
+9. subplot(4,1,1);
+10. stem(t,step1);
+11. xlabel('Time');
+12. ylabel('Amplitude');
+13. title('Signal 1');14.
+15. subplot(4,1,2);
+16. stem(t,step2);
+17. xlabel('Time');
+18. ylabel('Amplitude');
+19. title('Signal 2');
+20.
+21. step3 = step1+step2
+22. subplot(4,1,3);
+23. stem(t,step3);
+24. xlabel('Time');
+25. ylabel('Amplitude');
+26. title('Addition');
+27.
+28. step4 = step1-step2
+29. subplot(4,1,4);
+30. stem(t,step4);
+31. xlabel('Time');
+32. ylabel('Amplitude');
+33. title('Subtraction');
+Presentation of two signals-
+1. clc;
+2. clear all;
+3. close all;
+4.
+5. t=0:1:7;
+6. u = [ones(1,1).*1 ones(1,2).*2 ones(1,1).*4 ones(1,1).*4 ones(1,2).*2 ones(1,1)];
+7. subplot(2,1,1);
+8. plot(t,u);
+9. xlabel('Time');
+10. ylabel('Amplitude');
+11. title('Signal 1');
+12. xlim=([0, 8]);
+13. ylim([1, 5]);
+14.
+15. t=0:1:6;
+16. u1 = [zeros(1,1) ones(1,5) zeros(1,1)];
+17. subplot(2,1,2);
+18. plot(t,u1);
+19. xlabel('Time');
+20. ylabel('Amplitude');
+21. title('Signal 2');22. xlim=([-0, 7]);
+23. ylim([0, 1.1])
